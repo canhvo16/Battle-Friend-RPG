@@ -1,22 +1,33 @@
-class Fighter {
-  constructor(name) {
-    this.name = name
-    this.hp = 100
-    this.attack = 10
-    this.defense = 10
-  }
-  attack1() {
-    let damage = this.attack
-    jane.hp -= damage
+let player1Attack = document.querySelector('#player1')
+let player2Attack = document.querySelector('#player2')
+
+let player1 = {
+  name: 'Canh',
+  hp: 100,
+  attack: 10,
+  defense: 10,
+  hit: function () {
+    let damage = parseFloat(player1.attack)
+    player2.hp -= damage
     console.log(
-      `${jane.name}'s HP has gone down by ${damage} life points. Current HP is ${jane.hp}`
+      `${player2.name}'s HP has gone down by ${damage} life points. Current HP is ${player2.hp}`
     )
   }
 }
 
-let canh = new Fighter('Canh')
+let player2 = {
+  name: 'Jane',
+  hp: 100,
+  attack: 10,
+  defense: 10,
+  hit: function () {
+    let damage = parseFloat(player2.attack)
+    player1.hp -= damage
+    console.log(
+      `${player1.name}'s HP has gone down by ${damage} life points. Current HP is ${player1.hp}`
+    )
+  }
+}
 
-let jane = new Fighter('Jane')
-
-console.log(canh)
-console.log(jane)
+player1Attack.addEventListener('click', player1.hit)
+player2Attack.addEventListener('click', player2.hit)
