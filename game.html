@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <title>Battle Friend</title>
+</head>
+<body>
+  <h1>Battle Friend Arena</h1>
+  <section class="arena">
+    <img src="assets/imgs/water_idle/idle_1.png" class="water">
+    <img src="assets/imgs/fire_idle/idle_1.png" class="fire">
+  </section>
+  <section class="playerBoard">
+    <div class="playerScreen">
+      <section class="player1Stats">
+        <h3>Player 1</h3>
+        <p class="hp1"></p>
+        <p class="attack1"></p>
+        <p class="defense1"></p>
+      </section>
+      <section class="player1Buttons">
+        <button class="player1" id="move1a">Hit (Basic)</button>
+        <button class="player1" id="move2a">Smash (Heavy)</button>
+        <button class="player1" id="move3a">Power Up</button>
+        <button class="player1" id="move4a">Break Defense</button>
+      </section>
+    </div>
+    <div class="playerScreen">
+      <section class="player2Stats">
+        <h3>Player 2</h3>
+        <p class="hp2"></p>
+        <p class="attack2"></p>
+        <p class="defense2"></p>
+      </section>
+      <section class="player2Buttons">
+        <button class="player2" id="move1b">Hit (Basic)</button>
+        <button class="player2" id="move2b">Smash (Heavy)</button>
+        <button class="player2" id="move3b">Power Up</button>
+        <button class="player2" id="move4b">Break Defense</button>
+      </section>
+    </div>
+  </section>
+  <section class="gameNarration">
+    <p class="narration"></p>
+  </section>
+</body>
+</html>

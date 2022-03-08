@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.playerBoard {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.player1Buttons,
+.player2Buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+}
+
+.gameNarration {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.arena {
+  display: flex;
+  justify-content: center;
+  background-image: url('assets/imgs/Background.png');
+  background-size: contain;
+  height: 300px;
+}
+
+.fire {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}

@@ -14,7 +14,7 @@ let player2BreakDefense = document.querySelector('#move4b')
 let hp2 = document.querySelector('.hp2')
 let attack2 = document.querySelector('.attack2')
 let defense2 = document.querySelector('.defense2')
-let player12uttons = document.querySelectorAll('.player2')
+let player2Buttons = document.querySelectorAll('.player2')
 
 let player1Turn = true
 let player2Turn = false
@@ -24,13 +24,14 @@ let player1 = {
   name: 'Canh',
   hp: 100,
   attack: 10,
-  defense: 0,
+  defense: 2,
   hit: function () {
     if (player1Turn === true) {
       let damage = player1.attack - player2.defense
       player2.hp -= damage
       narration.innerHTML = `${player1.name} has hit ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
       hp2.innerHTML = `HP: ${player2.hp}`
+      setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
       checkWin()
@@ -42,6 +43,7 @@ let player1 = {
       player2.hp -= damage
       narration.innerHTML = `${player1.name} smashed ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
       hp2.innerHTML = `HP: ${player2.hp}`
+      setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
       checkWin()
@@ -52,6 +54,7 @@ let player1 = {
       player1.attack += 2
       narration.innerHTML = `${player1.name} has increased his/her/their strength! Power now at ${player1.attack}`
       attack1.innerHTML = `Attack Power: ${player1.attack}`
+      setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
     }
@@ -61,6 +64,7 @@ let player1 = {
       player2.defense -= 1
       narration.innerHTML = `${player1.name} has scared ${player2.name}! ${player2.name}'s defense has fallen to ${player2.defense}!`
       defense2.innerHTML = `Defense Power: ${player2.defense}`
+      setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
     }
@@ -71,13 +75,14 @@ let player2 = {
   name: 'Jane',
   hp: 100,
   attack: 10,
-  defense: 0,
+  defense: 2,
   hit: function () {
     if (player2Turn === true) {
       let damage = player2.attack - player1.defense
       player1.hp -= damage
       narration.innerHTML = `${player2.name} has hit ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
       hp1.innerHTML = `HP: ${player1.hp}`
+      setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
       checkWin()
@@ -89,6 +94,7 @@ let player2 = {
       player1.hp -= damage
       narration.innerHTML = `${player2.name} smashed ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
       hp1.innerHTML = `HP: ${player1.hp}`
+      setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
       checkWin()
@@ -99,6 +105,7 @@ let player2 = {
       player2.attack += 2
       narration.innerHTML = `${player2.name} has increased his/her/their strength! Power now at ${player2.attack}`
       attack2.innerHTML = `Attack Power: ${player2.attack}`
+      setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
     }
@@ -108,6 +115,7 @@ let player2 = {
       player1.defense -= 1
       narration.innerHTML = `${player2.name} has scared ${player1.name}! ${player1.name}'s defense has fallen to ${player1.defense}!`
       defense1.innerHTML = `Defense Power: ${player1.defense}`
+      setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
     }
@@ -130,6 +138,14 @@ function checkWin() {
   } else if (player2.hp <= 0) {
     narration.innerHTML = `${player2.name} has been slain! ${player1.name} is victorious!`
   }
+}
+
+function player1Move() {
+  narration.innerHTML = `${player1.name}'s turn to make a move!`
+}
+
+function player2Move() {
+  narration.innerHTML = `${player2.name}'s turn to make a move!`
 }
 
 player1Hit.addEventListener('click', player1.hit)
