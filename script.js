@@ -31,7 +31,7 @@ let player1 = {
       player2.hp -= damage
       narration.innerHTML = `${player1.name} has hit ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
       hp2.innerHTML = `HP: ${player2.hp}`
-      setTimeout(player2Move, 3000)
+      setTimeout(player2Move, 3500)
       player1Turn = false
       player2Turn = true
       checkWin()
@@ -43,7 +43,7 @@ let player1 = {
       player2.hp -= damage
       narration.innerHTML = `${player1.name} smashed ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
       hp2.innerHTML = `HP: ${player2.hp}`
-      setTimeout(player2Move, 3000)
+      setTimeout(player2Move, 3500)
       player1Turn = false
       player2Turn = true
       checkWin()
@@ -54,7 +54,7 @@ let player1 = {
       player1.attack += 2
       narration.innerHTML = `${player1.name} has increased his/her/their strength! Power now at ${player1.attack}`
       attack1.innerHTML = `Attack Power: ${player1.attack}`
-      setTimeout(player2Move, 3000)
+      setTimeout(player2Move, 3500)
       player1Turn = false
       player2Turn = true
     }
@@ -64,7 +64,7 @@ let player1 = {
       player2.defense -= 1
       narration.innerHTML = `${player1.name} has scared ${player2.name}! ${player2.name}'s defense has fallen to ${player2.defense}!`
       defense2.innerHTML = `Defense Power: ${player2.defense}`
-      setTimeout(player2Move, 3000)
+      setTimeout(player2Move, 3500)
       player1Turn = false
       player2Turn = true
     }
@@ -82,7 +82,7 @@ let player2 = {
       player1.hp -= damage
       narration.innerHTML = `${player2.name} has hit ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
       hp1.innerHTML = `HP: ${player1.hp}`
-      setTimeout(player1Move, 3000)
+      setTimeout(player1Move, 3500)
       player1Turn = true
       player2Turn = false
       checkWin()
@@ -94,7 +94,7 @@ let player2 = {
       player1.hp -= damage
       narration.innerHTML = `${player2.name} smashed ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
       hp1.innerHTML = `HP: ${player1.hp}`
-      setTimeout(player1Move, 3000)
+      setTimeout(player1Move, 3500)
       player1Turn = true
       player2Turn = false
       checkWin()
@@ -105,7 +105,7 @@ let player2 = {
       player2.attack += 2
       narration.innerHTML = `${player2.name} has increased his/her/their strength! Power now at ${player2.attack}`
       attack2.innerHTML = `Attack Power: ${player2.attack}`
-      setTimeout(player1Move, 3000)
+      setTimeout(player1Move, 3500)
       player1Turn = true
       player2Turn = false
     }
@@ -115,7 +115,7 @@ let player2 = {
       player1.defense -= 1
       narration.innerHTML = `${player2.name} has scared ${player1.name}! ${player1.name}'s defense has fallen to ${player1.defense}!`
       defense1.innerHTML = `Defense Power: ${player1.defense}`
-      setTimeout(player1Move, 3000)
+      setTimeout(player1Move, 3500)
       player1Turn = true
       player2Turn = false
     }
