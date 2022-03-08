@@ -15,6 +15,7 @@ let hit1 = 10
 let smash1 = 3
 let power1 = 5
 let scare1 = 5
+let healthBar1 = document.querySelector('#healthBar1')
 
 let player2Hit = document.querySelector('#move1b')
 let player2Smash = document.querySelector('#move2b')
@@ -33,6 +34,7 @@ let hit2 = 10
 let smash2 = 3
 let power2 = 5
 let scare2 = 5
+let healthBar2 = document.querySelector('#healthBar2')
 
 let player1Turn = true
 let player2Turn = false
@@ -47,9 +49,10 @@ let player1 = {
     if (player1Turn === true && hit1 > 0) {
       let damage = player1.attack - player2.defense
       player2.hp -= damage
+      healthBar2.value -= damage
       narration.innerHTML = `${player1.name} has hit ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
       hp2.innerHTML = `HP: ${player2.hp}`
-      setTimeout(player2Move, 3500)
+      setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
       hit1 -= 1
@@ -61,9 +64,10 @@ let player1 = {
     if (player1Turn === true && smash1 > 0) {
       let damage = player1.attack * 1.5 - player2.defense
       player2.hp -= damage
+      healthBar2.value -= damage
       narration.innerHTML = `${player1.name} smashed ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
       hp2.innerHTML = `HP: ${player2.hp}`
-      setTimeout(player2Move, 3500)
+      setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
       smash1 -= 1
@@ -76,7 +80,7 @@ let player1 = {
       player1.attack += 2
       narration.innerHTML = `${player1.name} has increased his/her/their strength! Power now at ${player1.attack}`
       attack1.innerHTML = `Attack Power: ${player1.attack}`
-      setTimeout(player2Move, 3500)
+      setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
       power1 -= 1
@@ -88,7 +92,7 @@ let player1 = {
       player2.defense -= 1
       narration.innerHTML = `${player1.name} has scared ${player2.name}! ${player2.name}'s defense has fallen to ${player2.defense}!`
       defense2.innerHTML = `Defense Power: ${player2.defense}`
-      setTimeout(player2Move, 3500)
+      setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
       scare1 -= 1
@@ -106,9 +110,10 @@ let player2 = {
     if (player2Turn === true && hit2 > 0) {
       let damage = player2.attack - player1.defense
       player1.hp -= damage
+      healthBar1.value -= damage
       narration.innerHTML = `${player2.name} has hit ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
       hp1.innerHTML = `HP: ${player1.hp}`
-      setTimeout(player1Move, 3500)
+      setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
       hit2 -= 1
@@ -120,9 +125,10 @@ let player2 = {
     if (player2Turn === true && smash2 > 0) {
       let damage = player2.attack * 1.5 - player1.defense
       player1.hp -= damage
+      healthBar1.value -= damage
       narration.innerHTML = `${player2.name} smashed ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
       hp1.innerHTML = `HP: ${player1.hp}`
-      setTimeout(player1Move, 3500)
+      setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
       smash2 -= 1
@@ -135,7 +141,7 @@ let player2 = {
       player2.attack += 2
       narration.innerHTML = `${player2.name} has increased his/her/their strength! Power now at ${player2.attack}`
       attack2.innerHTML = `Attack Power: ${player2.attack}`
-      setTimeout(player1Move, 3500)
+      setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
       power2 -= 1
@@ -147,7 +153,7 @@ let player2 = {
       player1.defense -= 1
       narration.innerHTML = `${player2.name} has scared ${player1.name}! ${player1.name}'s defense has fallen to ${player1.defense}!`
       defense1.innerHTML = `Defense Power: ${player1.defense}`
-      setTimeout(player1Move, 3500)
+      setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
       scare2 -= 1
