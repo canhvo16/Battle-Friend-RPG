@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+body {
+  width: 100vw;
+}
+
 h1 {
   padding: 20px;
   display: flex;
@@ -24,8 +28,14 @@ h1 {
 
 .gameNarration {
   display: flex;
+  align-items: center;
   justify-content: center;
   padding: 20px;
+}
+
+.player1,
+.player2 {
+  padding: 10px;
 }
 
 .arena {
@@ -33,7 +43,7 @@ h1 {
   justify-content: center;
   background-image: url('assets/imgs/Background.png');
   background-size: contain;
-  height: 300px;
+  height: 350px;
 }
 
 .fire {
