@@ -174,7 +174,7 @@ let player2 = {
   },
   breakDefense: function () {
     if (player2Turn === true && scare2 > 0) {
-      player2.defense += 2
+      player1.defense -= 2
       narration.innerHTML = `${player2.name} has scared ${player1.name}! ${player1.name}'s defense has fallen to ${player1.defense}!`
       defense1.innerHTML = `Defense Power: ${player1.defense}`
       setTimeout(player1Move, 3000)
@@ -223,3 +223,12 @@ player2Hit.addEventListener('click', player2.hit)
 player2Smash.addEventListener('click', player2.smash)
 player2PowerUp.addEventListener('click', player2.powerUp)
 player2BreakDefense.addEventListener('click', player2.breakDefense)
+
+let play = document.querySelector('.play')
+
+play.addEventListener('click', () => {})
+
+// Save data to Session Storage
+// sessionStorage.setItem("key", "value");
+// Read Data from Session Storage
+// let lastname = sessionStorage.getItem("key");
