@@ -16,6 +16,7 @@ let smash1 = 3
 let power1 = 5
 let scare1 = 5
 let healthBar1 = document.querySelector('#healthBar1')
+let name1 = document.querySelector('.name1')
 
 let player2Hit = document.querySelector('#move1b')
 let player2Smash = document.querySelector('#move2b')
@@ -35,13 +36,24 @@ let smash2 = 3
 let power2 = 5
 let scare2 = 5
 let healthBar2 = document.querySelector('#healthBar2')
+let name2 = document.querySelector('.name2')
 
 let player1Turn = true
 let player2Turn = false
 let narration = document.querySelector('.narration')
 
+// let play = document.querySelector('.play')
+
+// play.addEventListener('click', () => {
+//   sessionStorage.setItem('playerName1', `${name1.value}`)
+//   sessionStorage.setItem('playerName2', `${name2.value}`)
+// })
+
+// let friend1 = sessionStorage.getItem('playerName1')
+// let friend2 = sessionStorage.getItem('playerName2')
+
 let player1 = {
-  name: 'Canh',
+  name: `Canh`,
   hp: 100,
   attack: 20,
   defense: 10,
@@ -114,7 +126,7 @@ let player1 = {
 }
 
 let player2 = {
-  name: 'Jane',
+  name: `Jane`,
   hp: 100,
   attack: 20,
   defense: 10,
@@ -223,10 +235,6 @@ player2Hit.addEventListener('click', player2.hit)
 player2Smash.addEventListener('click', player2.smash)
 player2PowerUp.addEventListener('click', player2.powerUp)
 player2BreakDefense.addEventListener('click', player2.breakDefense)
-
-let play = document.querySelector('.play')
-
-play.addEventListener('click', () => {})
 
 // Save data to Session Storage
 // sessionStorage.setItem("key", "value");
