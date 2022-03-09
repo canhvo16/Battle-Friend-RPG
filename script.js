@@ -51,6 +51,8 @@ let narration = document.querySelector('.narration')
 
 // let friend1 = sessionStorage.getItem('playerName1')
 // let friend2 = sessionStorage.getItem('playerName2')
+// console.log(friend1)
+// console.log(friend2)
 
 let player1 = {
   name: `Canh`,
@@ -70,6 +72,9 @@ let player1 = {
       player2.hp -= damage
       healthBar2.value -= damage
       hp2.innerHTML = `HP: ${player2.hp}`
+      if (player2.hp < 35) {
+        hp2.style.color = 'red'
+      }
       setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
@@ -91,6 +96,9 @@ let player1 = {
       player2.hp -= damage
       healthBar2.value -= damage
       hp2.innerHTML = `HP: ${player2.hp}`
+      if (player2.hp < 35) {
+        hp2.style.color = 'red'
+      }
       setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
@@ -143,6 +151,9 @@ let player2 = {
       player1.hp -= damage
       healthBar1.value -= damage
       hp1.innerHTML = `HP: ${player1.hp}`
+      if (player1.hp < 35) {
+        hp1.style.color = 'red'
+      }
       setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
@@ -164,6 +175,9 @@ let player2 = {
       player1.hp -= damage
       healthBar1.value -= damage
       hp1.innerHTML = `HP: ${player1.hp}`
+      if (player1.hp < 35) {
+        hp1.style.color = 'red'
+      }
       setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
