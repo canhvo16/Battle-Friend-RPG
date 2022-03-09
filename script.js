@@ -43,36 +43,48 @@ let narration = document.querySelector('.narration')
 let player1 = {
   name: 'Canh',
   hp: 100,
-  attack: 10,
-  defense: 2,
+  attack: 20,
+  defense: 10,
   hit: function () {
     if (player1Turn === true && hit1 > 0) {
       let damage = player1.attack - player2.defense
+      let criticalHit = Math.ceil(Math.random() * 10)
+      if (criticalHit >= 9) {
+        damage *= 1.5
+        narration.innerHTML = `${player1.name} has hit ${player2.name} and it was a critical hit! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+      } else {
+        narration.innerHTML = `${player1.name} has hit ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+      }
       player2.hp -= damage
       healthBar2.value -= damage
-      narration.innerHTML = `${player1.name} has hit ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
       hp2.innerHTML = `HP: ${player2.hp}`
       setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
       hit1 -= 1
       hitButton1.innerHTML = `${hit1}`
-      checkWin()
+      setTimeout(checkWin, 3001)
     }
   },
   smash: function () {
     if (player1Turn === true && smash1 > 0) {
-      let damage = player1.attack * 1.5 - player2.defense
+      let damage = player1.attack + 5 - player2.defense
+      let criticalHit = Math.ceil(Math.random() * 10)
+      if (criticalHit >= 9) {
+        damage *= 1.5
+        narration.innerHTML = `${player1.name} smashed ${player2.name} and it was a critical hit! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+      } else {
+        narration.innerHTML = `${player1.name} smashed ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+      }
       player2.hp -= damage
       healthBar2.value -= damage
-      narration.innerHTML = `${player1.name} smashed ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
       hp2.innerHTML = `HP: ${player2.hp}`
       setTimeout(player2Move, 3000)
       player1Turn = false
       player2Turn = true
       smash1 -= 1
       smashButton1.innerHTML = `${smash1}`
-      checkWin()
+      setTimeout(checkWin, 3001)
     }
   },
   powerUp: function () {
@@ -89,7 +101,7 @@ let player1 = {
   },
   breakDefense: function () {
     if (player1Turn === true && scare1 > 0) {
-      player2.defense -= 1
+      player2.defense -= 2
       narration.innerHTML = `${player1.name} has scared ${player2.name}! ${player2.name}'s defense has fallen to ${player2.defense}!`
       defense2.innerHTML = `Defense Power: ${player2.defense}`
       setTimeout(player2Move, 3000)
@@ -104,36 +116,48 @@ let player1 = {
 let player2 = {
   name: 'Jane',
   hp: 100,
-  attack: 10,
-  defense: 2,
+  attack: 20,
+  defense: 10,
   hit: function () {
     if (player2Turn === true && hit2 > 0) {
       let damage = player2.attack - player1.defense
+      let criticalHit = Math.ceil(Math.random() * 10)
+      if (criticalHit >= 9) {
+        damage *= 1.5
+        narration.innerHTML = `${player2.name} has hit ${player1.name} and it was a critical hit! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+      } else {
+        narration.innerHTML = `${player2.name} has hit ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+      }
       player1.hp -= damage
       healthBar1.value -= damage
-      narration.innerHTML = `${player2.name} has hit ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
       hp1.innerHTML = `HP: ${player1.hp}`
       setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
       hit2 -= 1
       hitButton2.innerHTML = `${hit2}`
-      checkWin()
+      setTimeout(checkWin, 3001)
     }
   },
   smash: function () {
     if (player2Turn === true && smash2 > 0) {
-      let damage = player2.attack * 1.5 - player1.defense
+      let damage = player2.attack + 5 - player1.defense
+      let criticalHit = Math.ceil(Math.random() * 10)
+      if (criticalHit >= 9) {
+        damage *= 1.5
+        narration.innerHTML = `${player2.name} smashed ${player1.name} and it was a critical hit! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+      } else {
+        narration.innerHTML = `${player2.name} smashed ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+      }
       player1.hp -= damage
       healthBar1.value -= damage
-      narration.innerHTML = `${player2.name} smashed ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
       hp1.innerHTML = `HP: ${player1.hp}`
       setTimeout(player1Move, 3000)
       player1Turn = true
       player2Turn = false
       smash2 -= 1
       smashButton2.innerHTML = `${smash2}`
-      checkWin()
+      setTimeout(checkWin, 3001)
     }
   },
   powerUp: function () {
@@ -150,7 +174,7 @@ let player2 = {
   },
   breakDefense: function () {
     if (player2Turn === true && scare2 > 0) {
-      player1.defense -= 1
+      player2.defense += 2
       narration.innerHTML = `${player2.name} has scared ${player1.name}! ${player1.name}'s defense has fallen to ${player1.defense}!`
       defense1.innerHTML = `Defense Power: ${player1.defense}`
       setTimeout(player1Move, 3000)

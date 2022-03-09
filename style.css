@@ -15,10 +15,6 @@ h1 {
   padding: 20px;
 }
 
-.healthBar {
-  color: green;
-}
-
 .player1Buttons,
 .player2Buttons {
   display: grid;
