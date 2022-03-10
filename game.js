@@ -50,6 +50,7 @@ let narration = document.querySelector('.narration')
 let rematch = document.querySelector('.rematch')
 let darkMode = document.querySelector('.darkMode')
 let body = document.querySelector('body')
+let header = document.querySelector('.header')
 
 let player1 = {
   name: `${friend1}`,
@@ -389,7 +390,7 @@ player2Score.innerHTML = `${playerScore2}`
 function checkWin() {
   if (player1.hp <= 0) {
     let i = 0
-    let speed = 25
+    let speed = 20
     let sentence = `${player1.name} has been slain! ${player2.name} is victorious! Would you like a rematch?`
     narration.innerHTML = ''
     function spellIt() {
@@ -406,7 +407,7 @@ function checkWin() {
     player2Score.innerHTML = `${playerScore2}`
   } else if (player2.hp <= 0) {
     let i = 0
-    let speed = 25
+    let speed = 20
     let sentence = `${player2.name} has been slain! ${player1.name} is victorious! Would you like a rematch?`
     narration.innerHTML = ''
     function spellIt() {
@@ -426,7 +427,7 @@ function checkWin() {
 
 function player1Move() {
   let i = 0
-  let speed = 25
+  let speed = 20
   let sentence = `${player1.name}'s turn to make a move!`
   narration.innerHTML = ''
   function spellIt() {
@@ -441,7 +442,7 @@ function player1Move() {
 
 function player2Move() {
   let i = 0
-  let speed = 25
+  let speed = 20
   let sentence = `${player2.name}'s turn to make a move!`
   narration.innerHTML = ''
   function spellIt() {
@@ -540,4 +541,7 @@ rematch.addEventListener('click', () => {
 
 darkMode.addEventListener('click', () => {
   body.classList.toggle('dark')
+  header.classList.toggle('dark')
+  hp1.classList.toggle('dark')
+  hp2.classList.toggle('dark')
 })
