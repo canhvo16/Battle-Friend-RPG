@@ -48,8 +48,8 @@ let scare2 = 5
 
 let narration = document.querySelector('.narration')
 let rematch = document.querySelector('.rematch')
-let i = 0
-let speed = 1000
+let darkMode = document.querySelector('.darkMode')
+let body = document.querySelector('body')
 
 let player1 = {
   name: `${friend1}`,
@@ -101,10 +101,10 @@ let player1 = {
       }
       setTimeout(player2Move, 3000)
       player1Turn = false
-      setTimeout(playerTurn2, 3000)
+      setTimeout(playerTurn2, 3500)
       hit1 -= 1
       hitButton1.innerHTML = `${hit1}`
-      setTimeout(checkWin, 3001)
+      setTimeout(checkWin, 3501)
     }
   },
   smash: function () {
@@ -153,10 +153,10 @@ let player1 = {
       }
       setTimeout(player2Move, 4000)
       player1Turn = false
-      setTimeout(playerTurn2, 4000)
+      setTimeout(playerTurn2, 4500)
       smash1 -= 1
       smashButton1.innerHTML = `${smash1}`
-      setTimeout(checkWin, 4001)
+      setTimeout(checkWin, 4501)
     }
   },
   powerUp: function () {
@@ -179,7 +179,7 @@ let player1 = {
       attack1.innerHTML = `Attack Power: ${player1.attack}`
       setTimeout(player2Move, 2500)
       player1Turn = false
-      setTimeout(playerTurn2, 2500)
+      setTimeout(playerTurn2, 3000)
       power1 -= 1
       powerButton1.innerHTML = `${power1}`
     }
@@ -204,7 +204,7 @@ let player1 = {
       defense2.innerHTML = `Defense Power: ${player2.defense}`
       setTimeout(player2Move, 2500)
       player1Turn = false
-      setTimeout(playerTurn2, 2500)
+      setTimeout(playerTurn2, 3000)
       scare1 -= 1
       scareButton1.innerHTML = `${scare1}`
     }
@@ -260,11 +260,11 @@ let player2 = {
         hp1.style.color = 'red'
       }
       setTimeout(player1Move, 3000)
-      setTimeout(playerTurn1, 3000)
+      setTimeout(playerTurn1, 3500)
       player2Turn = false
       hit2 -= 1
       hitButton2.innerHTML = `${hit2}`
-      setTimeout(checkWin, 3001)
+      setTimeout(checkWin, 3501)
     }
   },
   smash: function () {
@@ -311,11 +311,11 @@ let player2 = {
         hp1.style.color = 'red'
       }
       setTimeout(player1Move, 3000)
-      setTimeout(playerTurn1, 3000)
+      setTimeout(playerTurn1, 3500)
       player2Turn = false
       smash2 -= 1
       smashButton2.innerHTML = `${smash2}`
-      setTimeout(checkWin, 3001)
+      setTimeout(checkWin, 3501)
     }
   },
   powerUp: function () {
@@ -337,7 +337,7 @@ let player2 = {
       spellIt()
       attack2.innerHTML = `Attack Power: ${player2.attack}`
       setTimeout(player1Move, 2500)
-      setTimeout(playerTurn1, 2500)
+      setTimeout(playerTurn1, 3000)
       player2Turn = false
       power2 -= 1
       powerButton2.innerHTML = `${power2}`
@@ -362,7 +362,7 @@ let player2 = {
       spellIt()
       defense1.innerHTML = `Defense Power: ${player1.defense}`
       setTimeout(player1Move, 2500)
-      setTimeout(playerTurn1, 2500)
+      setTimeout(playerTurn1, 3000)
       player2Turn = false
       scare2 -= 1
       scareButton2.innerHTML = `${scare2}`
@@ -536,4 +536,8 @@ rematch.addEventListener('click', () => {
     narration.innerHTML = `${player2.name} will be the first to make a move!`
     fire.src = 'assets/imgs/01_idle_red(9).gif'
   }
+})
+
+darkMode.addEventListener('click', () => {
+  body.classList.toggle('dark')
 })
