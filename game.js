@@ -102,12 +102,12 @@ let player1 = {
       if (player2.hp < 35) {
         hp2.style.color = 'red'
       }
-      setTimeout(player2Move, 3000)
+      setTimeout(player2Move, 4000)
       player1Turn = false
-      setTimeout(playerTurn2, 3000)
+      setTimeout(playerTurn2, 4000)
       smash1 -= 1
       smashButton1.innerHTML = `${smash1}`
-      setTimeout(checkWin, 3001)
+      setTimeout(checkWin, 4001)
     }
   },
   powerUp: function () {
@@ -117,9 +117,9 @@ let player1 = {
       player1.attack += 2
       narration.innerHTML = `${player1.name} has increased his/her/their strength! Power now at ${player1.attack}`
       attack1.innerHTML = `Attack Power: ${player1.attack}`
-      setTimeout(player2Move, 3000)
+      setTimeout(player2Move, 2500)
       player1Turn = false
-      setTimeout(playerTurn2, 3000)
+      setTimeout(playerTurn2, 2500)
       power1 -= 1
       powerButton1.innerHTML = `${power1}`
     }
@@ -131,9 +131,9 @@ let player1 = {
       player2.defense -= 2
       narration.innerHTML = `${player1.name} has scared ${player2.name}! ${player2.name}'s defense has fallen to ${player2.defense}!`
       defense2.innerHTML = `Defense Power: ${player2.defense}`
-      setTimeout(player2Move, 3000)
+      setTimeout(player2Move, 2500)
       player1Turn = false
-      setTimeout(playerTurn2, 3000)
+      setTimeout(playerTurn2, 2500)
       scare1 -= 1
       scareButton1.innerHTML = `${scare1}`
     }
@@ -208,8 +208,8 @@ let player2 = {
       player2.attack += 2
       narration.innerHTML = `${player2.name} has increased his/her/their strength! Power now at ${player2.attack}`
       attack2.innerHTML = `Attack Power: ${player2.attack}`
-      setTimeout(player1Move, 3000)
-      setTimeout(playerTurn1, 3000)
+      setTimeout(player1Move, 2500)
+      setTimeout(playerTurn1, 2500)
       player2Turn = false
       power2 -= 1
       powerButton2.innerHTML = `${power2}`
@@ -222,8 +222,8 @@ let player2 = {
       player1.defense -= 2
       narration.innerHTML = `${player2.name} has scared ${player1.name}! ${player1.name}'s defense has fallen to ${player1.defense}!`
       defense1.innerHTML = `Defense Power: ${player1.defense}`
-      setTimeout(player1Move, 3000)
-      setTimeout(playerTurn1, 3000)
+      setTimeout(player1Move, 2500)
+      setTimeout(playerTurn1, 2500)
       player2Turn = false
       scare2 -= 1
       scareButton2.innerHTML = `${scare2}`
