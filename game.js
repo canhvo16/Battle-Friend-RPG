@@ -172,6 +172,10 @@ let player2 = {
   },
   smash: function () {
     if (player2Turn === true && smash2 > 0) {
+      fire.src = 'assets/imgs/08_sp_atk_red(17).gif'
+      setTimeout(fireIdle, 1800)
+      setTimeout(waterTakeHit, 2100)
+      setTimeout(waterIdle, 2700)
       let damage = player2.attack + 5 - player1.defense
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
