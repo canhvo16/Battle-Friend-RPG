@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgba(118, 147, 179, 255);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Supermercado One', cursive;
+  color: gold;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 75px;
+}
+
+.p1 {
+  font-size: 40px;
+}
+
+.p2 {
+  font-size: 30px;
+}
+
+.playerInput {
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Merienda', cursive;
+  padding: 20px;
+}
+
+#playerName1,
+#playerName2,
+.play {
+  font-family: 'Bebas Neue', cursive;
+  padding: 10px;
+}
+
+#playerName1,
+#playerName2 {
+  display: flex;
+  justify-content: right;
+}
+
+#name1,
+#name2 {
+  display: flex;
+  height: 32px;
+  font-size: 25px;
+  margin: 5px;
+}
+
+a {
+  display: flex;
+  justify-content: center;
+}

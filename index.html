@@ -5,24 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&family=Londrina+Shadow&family=Nunito+Sans:wght@200&family=Shizuru&family=Supermercado+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Festive&family=Londrina+Shadow&family=Merienda&family=Nunito+Sans:wght@200&family=Shizuru&family=Supermercado+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Festive&family=Londrina+Shadow&family=Merienda&family=Nunito+Sans:wght@200&family=Shizuru&family=Supermercado+One&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
   <title>Battle Friend</title>
 </head>
 <body>
   <header>
     <h1>Welcome to Battle Friend</h1>
-    <p>where you'll battle your friend...</p>
-    <p>...to the death!</p>
+    <p class="p1">where you'll battle your friend...</p>
+    <p class="p2">...to the death!</p>
   </header>
-  <section>
-    <h3>Friend 1, what is your name?</h3>
-    <input type="text" name="name1" id="name1" placeholder="Name">
-    <button id="playerName1">Lock In</button>
-  </section>  
-  <section>
-    <h3>Friend 2, what is your name?</h3>
-    <input type="text" name="name2" id="name2" placeholder="Name">
-    <button id="playerName2">Lock In</button>
+  <section class="playerInput">
+    <div>
+      <h3>Friend 1, what is your name?</h3>
+      <input type="text" name="name1" id="name1" placeholder="Name">
+      <button id="playerName1">Lock In</button>
+    </div>  
+    <div>
+      <h3>Friend 2, what is your name?</h3>
+      <input type="text" name="name2" id="name2" placeholder="Name">
+      <button id="playerName2">Lock In</button>
+    </div>
   </section>
   <a href="game.html">
     <button class="play">Ready to Battle?</button>

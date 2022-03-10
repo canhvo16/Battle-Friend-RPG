@@ -5,7 +5,7 @@
 
 body {
   width: 100vw;
-  background-color: lightgray;
+  background-color: rgba(118, 147, 179, 255);
 }
 
 .dark {
@@ -56,7 +56,9 @@ h1 {
 }
 
 .player1:hover,
-.player2:hover {
+.player2:hover,
+.rematch:hover,
+.darkMode:hover {
   background-color: rgb(133, 131, 131);
   color: white;
 }
