@@ -5,19 +5,31 @@
 
 body {
   width: 100vw;
+  background-color: lightgray;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgba(118, 147, 179, 255);
 }
 
 h1 {
-  padding: 20px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   font-family: 'Supermercado One', cursive;
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(206, 175, 0);
+}
+
+.player1Score,
+.player2Score {
+  font-size: 25px;
+  font-weight: bolder;
+  padding: 0 15px;
 }
 
 .player1Score,
@@ -32,12 +44,25 @@ h1 {
 .player2,
 .rematch {
   font-family: 'Bebas Neue', cursive;
+  font-size: 1.25rem;
+  font-weight: bolder;
 }
 
 .playerBoard {
   display: flex;
   justify-content: space-between;
+  width: 100vw;
+}
+
+.playerScreen {
+  width: 40%;
   padding: 20px;
+}
+
+.player1Name,
+.player2Name {
+  font-size: 25px;
+  font-weight: bolder;
 }
 
 .player1Buttons,
@@ -45,6 +70,27 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 10px;
+  grid-gap: 2px;
+}
+
+#move1a,
+#move1b {
+  border: 2px solid orange;
+}
+
+#move2a,
+#move2b {
+  border: 2px solid red;
+}
+
+#move3a,
+#move3b {
+  border: 2px solid rgb(58, 138, 58);
+}
+
+#move4a,
+#move4b {
+  border: 2px solid blue;
 }
 
 .healthBar {
@@ -55,12 +101,14 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
+  width: 60%;
 }
 
 .player1,
 .player2 {
   padding: 10px;
+  cursor: pointer;
 }
 
 .arena {
@@ -74,4 +122,8 @@ h1 {
 .fire {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+}
+
+.rematch {
+  margin: 0 auto;
 }
