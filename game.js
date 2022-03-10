@@ -48,6 +48,8 @@ let scare2 = 5
 
 let narration = document.querySelector('.narration')
 let rematch = document.querySelector('.rematch')
+let i = 0
+let speed = 1000
 
 let player1 = {
   name: `${friend1}`,
@@ -64,11 +66,34 @@ let player1 = {
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
         damage *= 1.5
-        narration.innerHTML = `${player1.name} has hit ${player2.name} and it was a critical hit! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+        player2.hp -= damage
+        let i = 0
+        let speed = 23
+        let sentence = `${player1.name} has hit ${player2.name} and it was a critical hit! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+        narration.innerHTML = ''
+        function spellIt() {
+          if (i < sentence.length) {
+            narration.innerHTML += sentence.charAt(i)
+            i += 1
+            setTimeout(spellIt, speed)
+          }
+        }
+        spellIt()
       } else {
-        narration.innerHTML = `${player1.name} has hit ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+        player2.hp -= damage
+        let i = 0
+        let speed = 30
+        let sentence = `${player1.name} has hit ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+        narration.innerHTML = ''
+        function spellIt() {
+          if (i < sentence.length) {
+            narration.innerHTML += sentence.charAt(i)
+            i += 1
+            setTimeout(spellIt, speed)
+          }
+        }
+        spellIt()
       }
-      player2.hp -= damage
       healthBar2.value -= damage
       hp2.innerHTML = `HP: ${player2.hp}`
       if (player2.hp < 35) {
@@ -92,11 +117,35 @@ let player1 = {
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
         damage *= 1.5
-        narration.innerHTML = `${player1.name} smashed ${player2.name} and it was a critical hit! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+        player2.hp -= damage
+        let i = 0
+        let speed = 30
+        let sentence = `${player1.name} smashed ${player2.name} and it was a critical hit! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+        narration.innerHTML = ''
+        function spellIt() {
+          if (i < sentence.length) {
+            narration.innerHTML += sentence.charAt(i)
+            i += 1
+            setTimeout(spellIt, speed)
+          }
+        }
+        spellIt()
       } else {
-        narration.innerHTML = `${player1.name} smashed ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+        player2.hp -= damage
+        let i = 0
+        let speed = 40
+        let sentence = `${player1.name} smashed ${player2.name}! ${player2.name}'s HP has gone down by ${damage} life points! Current HP is ${player2.hp}!`
+        narration.innerHTML = ''
+        function spellIt() {
+          if (i < sentence.length) {
+            narration.innerHTML += sentence.charAt(i)
+            i += 1
+            setTimeout(spellIt, speed)
+          }
+        }
+        spellIt()
       }
-      player2.hp -= damage
+
       healthBar2.value -= damage
       hp2.innerHTML = `HP: ${player2.hp}`
       if (player2.hp < 35) {
@@ -115,7 +164,18 @@ let player1 = {
       water.src = 'assets/imgs/11_heal_blue.gif'
       setTimeout(waterIdle, 2500)
       player1.attack += 2
-      narration.innerHTML = `${player1.name} has increased his/her/their strength! Power now at ${player1.attack}`
+      let i = 0
+      let speed = 25
+      let sentence = `${player1.name} has increased his/her/their strength! Power now at ${player1.attack}!`
+      narration.innerHTML = ''
+      function spellIt() {
+        if (i < sentence.length) {
+          narration.innerHTML += sentence.charAt(i)
+          i += 1
+          setTimeout(spellIt, speed)
+        }
+      }
+      spellIt()
       attack1.innerHTML = `Attack Power: ${player1.attack}`
       setTimeout(player2Move, 2500)
       player1Turn = false
@@ -129,7 +189,18 @@ let player1 = {
       water.src = 'assets/imgs/11_heal_blue.gif'
       setTimeout(waterIdle, 2500)
       player2.defense -= 2
-      narration.innerHTML = `${player1.name} has scared ${player2.name}! ${player2.name}'s defense has fallen to ${player2.defense}!`
+      let i = 0
+      let speed = 25
+      let sentence = `${player1.name} has scared ${player2.name}! ${player2.name}'s defense has fallen to ${player2.defense}!`
+      narration.innerHTML = ''
+      function spellIt() {
+        if (i < sentence.length) {
+          narration.innerHTML += sentence.charAt(i)
+          i += 1
+          setTimeout(spellIt, speed)
+        }
+      }
+      spellIt()
       defense2.innerHTML = `Defense Power: ${player2.defense}`
       setTimeout(player2Move, 2500)
       player1Turn = false
@@ -155,11 +226,34 @@ let player2 = {
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
         damage *= 1.5
-        narration.innerHTML = `${player2.name} has hit ${player1.name} and it was a critical hit! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+        player1.hp -= damage
+        let i = 0
+        let speed = 23
+        let sentence = `${player2.name} has hit ${player1.name} and it was a critical hit! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+        narration.innerHTML = ''
+        function spellIt() {
+          if (i < sentence.length) {
+            narration.innerHTML += sentence.charAt(i)
+            i += 1
+            setTimeout(spellIt, speed)
+          }
+        }
+        spellIt()
       } else {
-        narration.innerHTML = `${player2.name} has hit ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+        player1.hp -= damage
+        let i = 0
+        let speed = 30
+        let sentence = `${player2.name} has hit ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+        narration.innerHTML = ''
+        function spellIt() {
+          if (i < sentence.length) {
+            narration.innerHTML += sentence.charAt(i)
+            i += 1
+            setTimeout(spellIt, speed)
+          }
+        }
+        spellIt()
       }
-      player1.hp -= damage
       healthBar1.value -= damage
       hp1.innerHTML = `HP: ${player1.hp}`
       if (player1.hp < 35) {
@@ -183,11 +277,34 @@ let player2 = {
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
         damage *= 1.5
-        narration.innerHTML = `${player2.name} smashed ${player1.name} and it was a critical hit! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+        player1.hp -= damage
+        let i = 0
+        let speed = 23
+        let sentence = `${player2.name} smashed ${player1.name} and it was a critical hit! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+        narration.innerHTML = ''
+        function spellIt() {
+          if (i < sentence.length) {
+            narration.innerHTML += sentence.charAt(i)
+            i += 1
+            setTimeout(spellIt, speed)
+          }
+        }
+        spellIt()
       } else {
-        narration.innerHTML = `${player2.name} smashed ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+        player1.hp -= damage
+        let i = 0
+        let speed = 30
+        let sentence = `${player2.name} smashed ${player1.name}! ${player1.name}'s HP has gone down by ${damage} life points! Current HP is ${player1.hp}!`
+        narration.innerHTML = ''
+        function spellIt() {
+          if (i < sentence.length) {
+            narration.innerHTML += sentence.charAt(i)
+            i += 1
+            setTimeout(spellIt, speed)
+          }
+        }
+        spellIt()
       }
-      player1.hp -= damage
       healthBar1.value -= damage
       hp1.innerHTML = `HP: ${player1.hp}`
       if (player1.hp < 35) {
@@ -206,7 +323,18 @@ let player2 = {
       fire.src = 'assets/imgs/09_defend_fire.gif'
       setTimeout(fireIdle, 1100)
       player2.attack += 2
-      narration.innerHTML = `${player2.name} has increased his/her/their strength! Power now at ${player2.attack}`
+      let i = 0
+      let speed = 25
+      let sentence = `${player2.name} has increased his/her/their strength! Power now at ${player2.attack}!`
+      narration.innerHTML = ''
+      function spellIt() {
+        if (i < sentence.length) {
+          narration.innerHTML += sentence.charAt(i)
+          i += 1
+          setTimeout(spellIt, speed)
+        }
+      }
+      spellIt()
       attack2.innerHTML = `Attack Power: ${player2.attack}`
       setTimeout(player1Move, 2500)
       setTimeout(playerTurn1, 2500)
@@ -220,7 +348,18 @@ let player2 = {
       fire.src = 'assets/imgs/09_defend_fire.gif'
       setTimeout(fireIdle, 1100)
       player1.defense -= 2
-      narration.innerHTML = `${player2.name} has scared ${player1.name}! ${player1.name}'s defense has fallen to ${player1.defense}!`
+      let i = 0
+      let speed = 25
+      let sentence = `${player2.name} has scared ${player1.name}! ${player1.name}'s defense has fallen to ${player1.defense}!`
+      narration.innerHTML = ''
+      function spellIt() {
+        if (i < sentence.length) {
+          narration.innerHTML += sentence.charAt(i)
+          i += 1
+          setTimeout(spellIt, speed)
+        }
+      }
+      spellIt()
       defense1.innerHTML = `Defense Power: ${player1.defense}`
       setTimeout(player1Move, 2500)
       setTimeout(playerTurn1, 2500)
@@ -249,13 +388,35 @@ player2Score.innerHTML = `${playerScore2}`
 
 function checkWin() {
   if (player1.hp <= 0) {
-    narration.innerHTML = `${player1.name} has been slain! ${player2.name} is victorious! Would you like a rematch?`
+    let i = 0
+    let speed = 25
+    let sentence = `${player1.name} has been slain! ${player2.name} is victorious! Would you like a rematch?`
+    narration.innerHTML = ''
+    function spellIt() {
+      if (i < sentence.length) {
+        narration.innerHTML += sentence.charAt(i)
+        i += 1
+        setTimeout(spellIt, speed)
+      }
+    }
+    spellIt()
     water.src = 'assets/imgs/14_death_blue.gif'
     setTimeout(waterDead, 1200)
     playerScore2 += 1
     player2Score.innerHTML = `${playerScore2}`
   } else if (player2.hp <= 0) {
-    narration.innerHTML = `${player2.name} has been slain! ${player1.name} is victorious! Would you like a rematch?`
+    let i = 0
+    let speed = 25
+    let sentence = `${player2.name} has been slain! ${player1.name} is victorious! Would you like a rematch?`
+    narration.innerHTML = ''
+    function spellIt() {
+      if (i < sentence.length) {
+        narration.innerHTML += sentence.charAt(i)
+        i += 1
+        setTimeout(spellIt, speed)
+      }
+    }
+    spellIt()
     fire.src = 'assets/imgs/11_death_red.gif'
     setTimeout(fireDead, 1300)
     playerScore1 += 1
@@ -264,11 +425,33 @@ function checkWin() {
 }
 
 function player1Move() {
-  narration.innerHTML = `${player1.name}'s turn to make a move!`
+  let i = 0
+  let speed = 25
+  let sentence = `${player1.name}'s turn to make a move!`
+  narration.innerHTML = ''
+  function spellIt() {
+    if (i < sentence.length) {
+      narration.innerHTML += sentence.charAt(i)
+      i += 1
+      setTimeout(spellIt, speed)
+    }
+  }
+  spellIt()
 }
 
 function player2Move() {
-  narration.innerHTML = `${player2.name}'s turn to make a move!`
+  let i = 0
+  let speed = 25
+  let sentence = `${player2.name}'s turn to make a move!`
+  narration.innerHTML = ''
+  function spellIt() {
+    if (i < sentence.length) {
+      narration.innerHTML += sentence.charAt(i)
+      i += 1
+      setTimeout(spellIt, speed)
+    }
+  }
+  spellIt()
 }
 
 function playerTurn1() {
