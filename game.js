@@ -144,6 +144,10 @@ let player2 = {
   defense: 10,
   hit: function () {
     if (player2Turn === true && hit2 > 0) {
+      fire.src = 'assets/imgs/05_1_atk_red.gif'
+      setTimeout(fireIdle, 1000)
+      setTimeout(waterTakeHit, 1300)
+      setTimeout(waterIdle, 1900)
       let damage = player2.attack - player1.defense
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
