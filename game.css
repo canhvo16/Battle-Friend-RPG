@@ -20,6 +20,20 @@ h1 {
   font-family: 'Supermercado One', cursive;
 }
 
+.player1Score,
+.player2Score,
+.player1Stats,
+.player2Stats,
+.gameNarration {
+  font-family: 'Merienda', cursive;
+}
+
+.player1,
+.player2,
+.rematch {
+  font-family: 'Bebas Neue', cursive;
+}
+
 .playerBoard {
   display: flex;
   justify-content: space-between;
