@@ -53,10 +53,10 @@ let player1 = {
   defense: 10,
   hit: function () {
     if (player1Turn === true && hit1 > 0) {
-      water.src = ''
-      setTimeout(waterIdle, 2000)
-      setTimeout(fireTakeHit, 1500)
-      setTimeout(fireIdle, 2000)
+      water.src = 'assets/imgs/07_1_atk_blue.gif'
+      setTimeout(waterIdle, 700)
+      setTimeout(fireTakeHit, 1000)
+      setTimeout(fireIdle, 1600)
       let damage = player1.attack - player2.defense
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
@@ -83,8 +83,8 @@ let player1 = {
     if (player1Turn === true && smash1 > 0) {
       water.src = 'assets/imgs/10_sp_atk_blue.gif'
       setTimeout(waterIdle, 3200)
-      setTimeout(fireTakeHit, 3000)
-      setTimeout(fireIdle, 3600)
+      setTimeout(fireTakeHit, 3500)
+      setTimeout(fireIdle, 4100)
       let damage = player1.attack + 5 - player2.defense
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
