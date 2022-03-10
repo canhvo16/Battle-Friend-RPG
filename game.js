@@ -84,7 +84,7 @@ let player1 = {
       water.src = 'assets/imgs/10_sp_atk_blue.gif'
       setTimeout(waterIdle, 3200)
       setTimeout(fireTakeHit, 3500)
-      setTimeout(fireIdle, 4100)
+      setTimeout(fireIdle, 4000)
       let damage = player1.attack + 5 - player2.defense
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
@@ -243,8 +243,12 @@ narration.innerHTML = `${player1.name} will be the first to make a move!`
 function checkWin() {
   if (player1.hp <= 0) {
     narration.innerHTML = `${player1.name} has been slain! ${player2.name} is victorious!`
+    water.src = 'assets/imgs/14_death_blue.gif'
+    setTimeout(waterDead, 1200)
   } else if (player2.hp <= 0) {
     narration.innerHTML = `${player2.name} has been slain! ${player1.name} is victorious!`
+    fire.src = 'assets/imgs/11_death_red.gif'
+    setTimeout(fireDead, 1300)
   }
 }
 
@@ -270,6 +274,14 @@ function waterTakeHit() {
 
 function fireTakeHit() {
   fire.src = 'assets/imgs/10_take_hit_red.gif'
+}
+
+function waterDead() {
+  water.src = 'assets/imgs/death_blue.png'
+}
+
+function fireDead() {
+  fire.src = 'assets/imgs/death_red.png'
 }
 
 player1Hit.addEventListener('click', player1.hit)
