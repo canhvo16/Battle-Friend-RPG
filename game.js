@@ -11,11 +11,14 @@ let hitButton1 = document.querySelector('.hit1')
 let smashButton1 = document.querySelector('.smash1')
 let powerButton1 = document.querySelector('.power1')
 let scareButton1 = document.querySelector('.scare1')
+let healthBar1 = document.querySelector('#healthBar1')
+let friend1 = sessionStorage.getItem('playerNameValue1')
+let water = document.querySelector('.water')
+let player1Turn = true
 let hit1 = 10
 let smash1 = 3
 let power1 = 5
 let scare1 = 5
-let healthBar1 = document.querySelector('#healthBar1')
 
 let player2Hit = document.querySelector('#move1b')
 let player2Smash = document.querySelector('#move2b')
@@ -30,21 +33,21 @@ let hitButton2 = document.querySelector('.hit2')
 let smashButton2 = document.querySelector('.smash2')
 let powerButton2 = document.querySelector('.power2')
 let scareButton2 = document.querySelector('.scare2')
+let healthBar2 = document.querySelector('#healthBar2')
+let friend2 = sessionStorage.getItem('playerNameValue2')
+let fire = document.querySelector('.fire')
+let player2Turn = false
 let hit2 = 10
 let smash2 = 3
 let power2 = 5
 let scare2 = 5
-let healthBar2 = document.querySelector('#healthBar2')
 
-let player1Turn = true
-let player2Turn = false
 let narration = document.querySelector('.narration')
-
-let friend1 = sessionStorage.getItem('playerNameValue1')
-let friend2 = sessionStorage.getItem('playerNameValue2')
-
-let water = document.querySelector('.water')
-let fire = document.querySelector('.fire')
+let rematch = document.querySelector('.rematch')
+let player1Score = document.querySelector('.player1Score')
+let player2Score = document.querySelector('.player2Score')
+let playerScore1 = 0
+let playerScore2 = 0
 
 let player1 = {
   name: `${friend1}`,
@@ -239,16 +242,24 @@ attack2.innerHTML = `Attack Power: ${player2.attack}`
 defense2.innerHTML = `Defense Power: ${player2.defense}`
 
 narration.innerHTML = `${player1.name} will be the first to make a move!`
+water.src = 'assets/imgs/BlueDressG_Canh.gif'
+fire.src = 'assets/imgs/01_idle_red(9).gif'
+player1Score.innerHTML = `${playerScore1}`
+player2Score.innerHTML = `${playerScore2}`
 
 function checkWin() {
   if (player1.hp <= 0) {
-    narration.innerHTML = `${player1.name} has been slain! ${player2.name} is victorious!`
+    narration.innerHTML = `${player1.name} has been slain! ${player2.name} is victorious! Would you like a rematch?`
     water.src = 'assets/imgs/14_death_blue.gif'
     setTimeout(waterDead, 1200)
+    playerScore2 += 1
+    player2Score.innerHTML = `${playerScore2}`
   } else if (player2.hp <= 0) {
-    narration.innerHTML = `${player2.name} has been slain! ${player1.name} is victorious!`
+    narration.innerHTML = `${player2.name} has been slain! ${player1.name} is victorious! Would you like a rematch?`
     fire.src = 'assets/imgs/11_death_red.gif'
     setTimeout(fireDead, 1300)
+    playerScore1 += 1
+    player1Score.innerHTML = `${playerScore1}`
   }
 }
 
@@ -301,6 +312,3 @@ player2Hit.addEventListener('click', player2.hit)
 player2Smash.addEventListener('click', player2.smash)
 player2PowerUp.addEventListener('click', player2.powerUp)
 player2BreakDefense.addEventListener('click', player2.breakDefense)
-
-water.src = 'assets/imgs/BlueDressG_Canh.gif'
-fire.src = 'assets/imgs/01_idle_red(9).gif'

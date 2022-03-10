@@ -4,12 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="game.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&family=Londrina+Shadow&family=Nunito+Sans:wght@200&family=Shizuru&family=Supermercado+One&display=swap" rel="stylesheet">
   <script defer src="game.js"></script>
   <title>Battle Friend</title>
 </head>
 <body>
-  <h1>Battle Friend Arena</h1>
+  <section class="header">
+    <div class="player1Score"></div>
+    <h1>Battle Friend Arena</h1>
+    <div class="player2Score"></div>
+  </section>
   <section class="arena">
     <img src="" class="water">
     <img src="" class="fire">
@@ -49,5 +56,6 @@
       </section>
     </div>
   </section>
+  <button class="rematch">Rematch</button>
 </body>
 </html>

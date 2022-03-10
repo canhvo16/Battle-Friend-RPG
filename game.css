@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Supermercado One', cursive;
+}
+
+.playerBoard {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.player1Buttons,
+.player2Buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+}
+
+.healthBar {
+  background-color: green;
+}
+
+.gameNarration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.player1,
+.player2 {
+  padding: 10px;
+}
+
+.arena {
+  display: flex;
+  justify-content: center;
+  background-image: url('assets/imgs/Background.png');
+  background-size: contain;
+  height: 350px;
+}
+
+.fire {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
