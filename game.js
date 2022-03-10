@@ -42,8 +42,10 @@ let narration = document.querySelector('.narration')
 
 let friend1 = sessionStorage.getItem('playerNameValue1')
 let friend2 = sessionStorage.getItem('playerNameValue2')
-console.log(friend1)
-console.log(friend2)
+
+let water = document.querySelector('.water')
+let fire = document.querySelector('.fire')
+
 let player1 = {
   name: `${friend1}`,
   hp: 100,
@@ -51,6 +53,10 @@ let player1 = {
   defense: 10,
   hit: function () {
     if (player1Turn === true && hit1 > 0) {
+      water.src = ''
+      setTimeout(waterIdle, 2000)
+      setTimeout(fireTakeHit, 1500)
+      setTimeout(fireIdle, 2000)
       let damage = player1.attack - player2.defense
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
@@ -75,6 +81,10 @@ let player1 = {
   },
   smash: function () {
     if (player1Turn === true && smash1 > 0) {
+      water.src = 'assets/imgs/10_sp_atk_blue.gif'
+      setTimeout(waterIdle, 3200)
+      setTimeout(fireTakeHit, 3000)
+      setTimeout(fireIdle, 3600)
       let damage = player1.attack + 5 - player2.defense
       let criticalHit = Math.ceil(Math.random() * 10)
       if (criticalHit >= 9) {
@@ -99,6 +109,8 @@ let player1 = {
   },
   powerUp: function () {
     if (player1Turn === true && power1 > 0) {
+      water.src = 'assets/imgs/11_heal_blue.gif'
+      setTimeout(waterIdle, 2500)
       player1.attack += 2
       narration.innerHTML = `${player1.name} has increased his/her/their strength! Power now at ${player1.attack}`
       attack1.innerHTML = `Attack Power: ${player1.attack}`
@@ -111,6 +123,8 @@ let player1 = {
   },
   breakDefense: function () {
     if (player1Turn === true && scare1 > 0) {
+      water.src = 'assets/imgs/11_heal_blue.gif'
+      setTimeout(waterIdle, 2500)
       player2.defense -= 2
       narration.innerHTML = `${player1.name} has scared ${player2.name}! ${player2.name}'s defense has fallen to ${player2.defense}!`
       defense2.innerHTML = `Defense Power: ${player2.defense}`
@@ -230,6 +244,22 @@ function player2Move() {
   narration.innerHTML = `${player2.name}'s turn to make a move!`
 }
 
+function waterIdle() {
+  water.src = 'assets/imgs/BlueDressG_Canh.gif'
+}
+
+function fireIdle() {
+  fire.src = 'assets/imgs/01_idle_red(9).gif'
+}
+
+function waterTakeHit() {
+  water.src = 'assets/imgs/13_take_hit_blue.gif'
+}
+
+function fireTakeHit() {
+  fire.src = 'assets/imgs/10_take_hit_red.gif'
+}
+
 player1Hit.addEventListener('click', player1.hit)
 player1Smash.addEventListener('click', player1.smash)
 player1PowerUp.addEventListener('click', player1.powerUp)
@@ -239,3 +269,6 @@ player2Hit.addEventListener('click', player2.hit)
 player2Smash.addEventListener('click', player2.smash)
 player2PowerUp.addEventListener('click', player2.powerUp)
 player2BreakDefense.addEventListener('click', player2.breakDefense)
+
+water.src = 'assets/imgs/BlueDressG_Canh.gif'
+fire.src = 'assets/imgs/01_idle_red(9).gif'
