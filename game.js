@@ -13,8 +13,10 @@ let powerButton1 = document.querySelector('.power1')
 let scareButton1 = document.querySelector('.scare1')
 let healthBar1 = document.querySelector('#healthBar1')
 let friend1 = sessionStorage.getItem('playerNameValue1')
+let player1Score = document.querySelector('.player1Score')
 let water = document.querySelector('.water')
 let player1Turn = true
+let playerScore1 = 0
 let hit1 = 10
 let smash1 = 3
 let power1 = 5
@@ -35,8 +37,10 @@ let powerButton2 = document.querySelector('.power2')
 let scareButton2 = document.querySelector('.scare2')
 let healthBar2 = document.querySelector('#healthBar2')
 let friend2 = sessionStorage.getItem('playerNameValue2')
+let player2Score = document.querySelector('.player2Score')
 let fire = document.querySelector('.fire')
 let player2Turn = false
+let playerScore2 = 0
 let hit2 = 10
 let smash2 = 3
 let power2 = 5
@@ -44,10 +48,6 @@ let scare2 = 5
 
 let narration = document.querySelector('.narration')
 let rematch = document.querySelector('.rematch')
-let player1Score = document.querySelector('.player1Score')
-let player2Score = document.querySelector('.player2Score')
-let playerScore1 = 0
-let playerScore2 = 0
 
 let player1 = {
   name: `${friend1}`,
@@ -312,3 +312,35 @@ player2Hit.addEventListener('click', player2.hit)
 player2Smash.addEventListener('click', player2.smash)
 player2PowerUp.addEventListener('click', player2.powerUp)
 player2BreakDefense.addEventListener('click', player2.breakDefense)
+
+rematch.addEventListener('click', () => {
+  hit1 = 10
+  smash1 = 3
+  power1 = 5
+  scare1 = 5
+  hit2 = 10
+  smash2 = 3
+  power2 = 5
+  scare2 = 5
+  player1.hp = 100
+  player2.hp = 100
+  hp1.innerHTML = `HP: ${player1.hp}`
+  hp2.innerHTML = `HP: ${player2.hp}`
+  healthBar1.value = 100
+  healthBar2.value = 100
+  hitButton1.innerHTML = `${hit1}`
+  smashButton1.innerHTML = `${smash1}`
+  powerButton1.innerHTML = `${power1}`
+  scareButton1.innerHTML = `${scare1}`
+  hitButton2.innerHTML = `${hit2}`
+  smashButton2.innerHTML = `${smash2}`
+  powerButton2.innerHTML = `${power2}`
+  scareButton2.innerHTML = `${scare2}`
+  if (player1Turn === true) {
+    narration.innerHTML = `${player1.name} will be the first to make a move!`
+    water.src = 'assets/imgs/BlueDressG_Canh.gif'
+  } else if (player2Turn === true) {
+    narration.innerHTML = `${player2.name} will be the first to make a move!`
+    fire.src = 'assets/imgs/01_idle_red(9).gif'
+  }
+})
