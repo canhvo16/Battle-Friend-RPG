@@ -200,6 +200,8 @@ let player2 = {
   },
   powerUp: function () {
     if (player2Turn === true && power2 > 0) {
+      fire.src = 'assets/imgs/09_defend_fire.gif'
+      setTimeout(fireIdle, 1100)
       player2.attack += 2
       narration.innerHTML = `${player2.name} has increased his/her/their strength! Power now at ${player2.attack}`
       attack2.innerHTML = `Attack Power: ${player2.attack}`
@@ -212,6 +214,8 @@ let player2 = {
   },
   breakDefense: function () {
     if (player2Turn === true && scare2 > 0) {
+      fire.src = 'assets/imgs/09_defend_fire.gif'
+      setTimeout(fireIdle, 1100)
       player1.defense -= 2
       narration.innerHTML = `${player2.name} has scared ${player1.name}! ${player1.name}'s defense has fallen to ${player1.defense}!`
       defense1.innerHTML = `Defense Power: ${player1.defense}`
