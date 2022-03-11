@@ -6,7 +6,9 @@ Unit 1 Project: Javascript Game
 
 ### By: Canh Vo
 
-### [Github](https://github.com/canhvo16/Battle-Friend-RPG)
+### [Github](https://github.com/canhvo16)
+
+### [LinkedIn](https://www.linkedin.com/in/canh-vo-056122188/)
 
 ### [Trello](https://trello.com/b/hDGxvdFV/battle-friend-rpg)
 
@@ -14,7 +16,7 @@ Unit 1 Project: Javascript Game
 
 ### **_Description_**
 
-#### The Javascript game that I have chosen for my Unit 1 project is to build a simple RPG or Role-Playing Game. It will be a 2-player turn-based game where players will fight to the death. The scene is that your friend has done unspeakable actions to betray your trust and you feel that there is no way you can live in the same world as them. You must battle him/her/they to the death for your sanity and vengeance.
+#### The game that I have chosen for my Unit 1 project of Week 3 in GA's SEIR bootcamp is to build a simple RPG or Role-Playing Game using vanilla JavaScript. It will be a 2-player turn-based game where players will fight to the death with 4 given abilities. I've added features where players can add their names to their characters. They are able to have a remtach at any point in the battle and switch between dark and light modes. The scene is that your friend has done unspeakable actions to betray your trust and you feel that there is no way you can live in the same world as them. You must battle him/her/they to the death for your sanity and vengeance!
 
 ---
 
