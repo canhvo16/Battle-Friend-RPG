@@ -49,6 +49,7 @@ let scare2 = 5
 let narration = document.querySelector('.narration')
 let rematch = document.querySelector('.rematch')
 let darkMode = document.querySelector('.darkMode')
+let dark = 2
 let body = document.querySelector('body')
 let header = document.querySelector('.header')
 
@@ -105,7 +106,7 @@ let player1 = {
       setTimeout(playerTurn2, 3500)
       hit1 -= 1
       hitButton1.innerHTML = `${hit1}`
-      setTimeout(checkWin, 3501)
+      setTimeout(checkWin, 3601)
     }
   },
   smash: function () {
@@ -157,7 +158,7 @@ let player1 = {
       setTimeout(playerTurn2, 4500)
       smash1 -= 1
       smashButton1.innerHTML = `${smash1}`
-      setTimeout(checkWin, 4501)
+      setTimeout(checkWin, 4601)
     }
   },
   powerUp: function () {
@@ -265,7 +266,7 @@ let player2 = {
       player2Turn = false
       hit2 -= 1
       hitButton2.innerHTML = `${hit2}`
-      setTimeout(checkWin, 3501)
+      setTimeout(checkWin, 3601)
     }
   },
   smash: function () {
@@ -316,7 +317,7 @@ let player2 = {
       player2Turn = false
       smash2 -= 1
       smashButton2.innerHTML = `${smash2}`
-      setTimeout(checkWin, 3501)
+      setTimeout(checkWin, 3601)
     }
   },
   powerUp: function () {
@@ -512,8 +513,13 @@ rematch.addEventListener('click', () => {
   player2.attack = 20
   player1.defense = 10
   player2.defense = 10
-  hp1.style.color = 'black'
-  hp2.style.color = 'black'
+  if (dark % 2 === 1) {
+    hp1.style.color = 'gold'
+    hp2.style.color = 'gold'
+  } else {
+    hp1.style.color = 'black'
+    hp2.style.color = 'black'
+  }
   hp1.innerHTML = `HP: ${player1.hp}`
   hp2.innerHTML = `HP: ${player2.hp}`
   healthBar1.value = 100
@@ -544,4 +550,5 @@ darkMode.addEventListener('click', () => {
   header.classList.toggle('dark')
   hp1.classList.toggle('dark')
   hp2.classList.toggle('dark')
+  dark += 1
 })

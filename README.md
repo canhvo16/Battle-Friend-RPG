@@ -14,7 +14,7 @@ Unit 1 Project: Javascript Game
 
 ### **_Description_**
 
-#### The Javascript game that I have chosen for my Unit 1 project is to build a simple RPG or Role-Playing Game. It will be a 2-player turn-based game where players will fight to the death. The scene is that your friend has done unspeakable actions to betray your trust and you feel that there is no way you can live in the sasme world as him. You must battle him/her/they to the death for your sanity and vengeance.
+#### The Javascript game that I have chosen for my Unit 1 project is to build a simple RPG or Role-Playing Game. It will be a 2-player turn-based game where players will fight to the death. The scene is that your friend has done unspeakable actions to betray your trust and you feel that there is no way you can live in the same world as them. You must battle him/her/they to the death for your sanity and vengeance.
 
 ---
 
@@ -30,18 +30,30 @@ Unit 1 Project: Javascript Game
 
 ### **_How to Get Started_**
 
-- I would first create the main page first where players will be allowed to enter information and choose the kind of fighter that they want to play as. When players are ready to play, they will press a "Ready to Battle" button sending them to the second HTML file.
-- The second HTML file will be used as the arena in where they will fight. Here they will be given options on how they will like to play the game.
-- I would think about creating the players as objects by using a class so that both players can create their players using the same format of input boxes.
-- Each object will include a player's offensive and defensive stat. It will also include a set of 4 moves which will be set as methods to be called upon using buttons that will be given from the HTML file (DOM).
-- Each player will take turns making moves and only 1 move can be made at a time, so I will have to make it in a way that both players are not able to choose their turns at the same time and to only be able to click 1 ability.
-- There will have to be an element that shows the health of the player so when it hits 0, the game will know that the battle has ended and a winner will be declared.
-- As a bonus feature I want to try to add a "store" feature where players will begin with a set amount of money and purchase items to increase their chances of winning by either increasing their offensive or defensive stats which will have to alter the amount of damage they take from/do to the other player.
+- First I worked on the the main game HTML and created the necessary elements to have a playable game. This included building a set of buttons and a way to differentiate which buttons belonged to which character.
+- Once the buttons are set up, I worked on the corresponding JavaScript file. Player characters were created using objects and each object included a player's offensive and defensive stat. It also included a set of 4 moves which were set as methods to be called upon using buttons from the HTML file.
+- Each player will take turns making moves and only 1 move can be made at a time, so I made it in a way that both players are not able to choose their turns at the same time and can only choose 1 ability.
+- I made an element that shows the health of the player so that when it hits 0 or below, the game will know that the battle has ended, a winner will be declared, and a tally will be added to the scoreboard. As an added feature I also made the players’ offensive and defensive stats visible in the game as there are moves that change that stat.
+
+![Main Game Page](assets/Main-Game-Page.png)
+
+- The game includes a rematch button that resets all values back to what they were from the beginning and there is a dark mode included for those that prefer to play with a darker background.
+
+![Main Game Dark Mode](assets/Main-Game-Dark-Mode.png)
+
+- I found free sprites (game characters) and backgrounds to set as the visuals of the game.
+- When creating the landing page of the game, I placed input boxes where players can personalize their characters by adding a name to their characters. When both players lock in the name for their character, a ready to battle button will pop up that will send them to the main game.
+
+![Landing Page](assets/Landing-Page.png)
 
 ---
 
 ### **_Credits_**
 
-Images: [Google](https://www.google.com/)
+Sprites: [chierit](https://chierit.itch.io/)
 
-Markdown Guide: [iA.net](https://ia.net/writer/support/general/markdown-guide)
+Background Image: [edermunizz](https://edermunizz.itch.io/)
+
+Scroll Image: [PNG All](https://www.pngall.com/scroll-png)
+
+Animations: [Chris Inn](https://www.ciharath.com/)
